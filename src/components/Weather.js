@@ -2,8 +2,9 @@ import React from 'react'
 import { fetchWeatherApi } from 'openmeteo';
 	
 const params = {
-	"latitude": 52.52,
-	"longitude": 13.41,
+	// Moscow
+	"latitude": 55.762242,  
+	"longitude": 37.639008,
 	"hourly": "temperature_2m"
 };
 const url = "https://api.open-meteo.com/v1/forecast";
@@ -38,12 +39,10 @@ const weatherData = {
 };
 
 // `weatherData` now contains a simple structure with arrays for datetime and weather data
-for (let i = 0; i < weatherData.hourly.time.length; i++) {
-	console.log(
-		weatherData.hourly.time[i].toISOString(),
-		weatherData.hourly.temperature2m[i]
-	);
-}
+console.log(
+	weatherData.hourly.time[0].toISOString(),
+	weatherData.hourly.temperature2m[0]
+);
 
 export const Weather = () => {
   return (

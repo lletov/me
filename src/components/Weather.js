@@ -1,11 +1,23 @@
 import React from 'react'
 import { fetchWeatherApi } from 'openmeteo';
+
+// Weather Code	Description
+// 0	Clear sky
+// 1, 2, 3	Mainly clear, partly cloudy, and overcast
+// 45, 48	Fog and depositing rime fog
+// 51, 53, 55	Drizzle: Light, moderate, and dense intensity
+// 56, 57	Freezing Drizzle: Light and dense intensity
+// 61, 63, 65	Rain: Slight, moderate and heavy intensity
+// 66, 67	Freezing Rain: Light and heavy intensity
+// 71, 73, 75	Snow fall: Slight, moderate, and heavy intensity
+// 77	Snow grains
+// 80, 81, 82	Rain showers: Slight, moderate, and violent
+// 85, 86	Snow showers slight and heavy
 	
 const params = {
-	// Moscow
-	"latitude": 55.762242,  
-	"longitude": 37.639008,
-	"hourly": "temperature_2m"
+	"latitude": 52.52,
+	"longitude": 13.41,
+	"current": ["temperature_2m", "weather_code"]
 };
 const url = "https://api.open-meteo.com/v1/forecast";
 const responses = await fetchWeatherApi(url, params);
@@ -24,25 +36,18 @@ const timezoneAbbreviation = response.timezoneAbbreviation();
 const latitude = response.latitude();
 const longitude = response.longitude();
 
-const hourly = response.hourly();
+const current = response.current();
 
 // Note: The order of weather variables in the URL query and the indices below need to match!
 const weatherData = {
-
-	hourly: {
-		time: range(Number(hourly.time()), Number(hourly.timeEnd()), hourly.interval()).map(
-			(t) => new Date((t + utcOffsetSeconds) * 1000)
-		),
-		temperature2m: hourly.variables(0).valuesArray(),
+	current: {
+		time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
+		temperature2m: current.variables(0).value(),
+		weatherCode: current.variables(1).value(),
 	},
 
 };
-
-// `weatherData` now contains a simple structure with arrays for datetime and weather data
-console.log(
-	weatherData.hourly.time[0].toISOString(),
-	weatherData.hourly.temperature2m[0]
-);
+console.log(weatherData.current)
 
 export const Weather = () => {
   return (

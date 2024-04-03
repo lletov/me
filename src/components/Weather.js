@@ -15,8 +15,9 @@ import { fetchWeatherApi } from 'openmeteo';
 // 85, 86	Snow showers slight and heavy
 	
 const params = {
-	"latitude": 52.52,
-	"longitude": 13.41,
+	// Moscow
+	"latitude": 55.762242, 
+	"longitude": 37.639008,
 	"current": ["temperature_2m", "weather_code"]
 };
 const url = "https://api.open-meteo.com/v1/forecast";

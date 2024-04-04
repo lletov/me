@@ -70,6 +70,10 @@ function App() {
   }
   useEffect(() => {
     getWeather()
+    const timeoutId = setInterval(() => {
+      getWeather();
+    }, 300000);
+    
     },[]);
   return (
     <div className="App">

@@ -1,9 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import { Weather } from './components/Weather';
+
 
 import { fetchWeatherApi } from 'openmeteo';
 import { useState, useEffect } from 'react';
+import { Description } from './components/Description';
+import { Header } from './components/Header';
+import { Skills } from './components/Skills';
+import { Experience } from './components/Experience';
+import { Projects } from './components/Projects';
+import { Education } from './components/Education';
+import { Contacts } from './components/Contacts';
+import { Geo } from './components/Geo';
+import { Weather } from './components/Weather';
+import { Language } from './components/Language';
 
 // Weather Code	Description
 // 0	Clear sky
@@ -63,24 +73,26 @@ function App() {
     },[]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          
-        </a>
-        <Weather temp={temperature}/>
-      </header>
+      <div className='main-content'>
+        <Header/>
+        <Description/>
+        <Skills/>
+        <Experience/>
+      </div>
+      <div className='secondary-content'>
+        <Projects/>
+        <Education/>
+        <Contacts/>
+        <div className='footer-content'>
+          <Geo/>
+          <Weather temp={temperature}/>
+          <Language/>
+        </div>
+        
+      </div>
     </div>
   );
 }
 
 export default App;
+

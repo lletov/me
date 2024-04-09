@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Language = () => {
   return (
-    <div>Language</div>
+    <div className='content'><p>RU</p></div>
   )
 }

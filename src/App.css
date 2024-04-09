@@ -90,23 +90,39 @@ h3 {
 
 .content{
   background-color: var(--black);
+  padding: 16px;
+}
+.content:hover{
+  background-color: var(--gray);
 }
 
 .App{
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 75% auto;
+  gap: 2px;
 }
 
 .main-content {
   display: grid;
-  grid-template-rows: 10vh 15vh 25vh 50vh;
+  grid-template-rows: 10vh 15vh 25vh calc(50vh - 6px);
+  gap: 2px;
 }
 
 .secondary-content {
   display: grid;
-  grid-template-rows: 30vh 30vh 30vh 10vh;
+  grid-template-rows: 30vh 30vh 30vh calc(10vh - 6px);
+  gap: 2px;
 }
 
+.footer-content{
+  display: grid;
+  grid-template-columns: 45% 25% auto;
+  gap: 2px;
+}
+
+.orange {
+  color: var(--orange);
+}
 
 
 .row {

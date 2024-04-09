@@ -1,13 +1,19 @@
 import React from 'react'
 
-export const Weather = ({temp}) => {
+export const Weather = ({temp, weatherCode}) => {
 	if (temp < 0){
 		return (
-			<div>{temp} °C</div>
+			<div className='content'>
+				<p>{temp}°C</p>
+				<p>{weatherCode}</p>
+			</div>
 		  )
 	} else {
 		return (
-			<div>+{temp} °C</div>
+			<div className='content'>
+				<p>+{temp}°C</p>
+				<p>{weatherCode}</p>
+			</div>
 		  )
 	}
 }

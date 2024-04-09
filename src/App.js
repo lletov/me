@@ -30,6 +30,7 @@ import { Language } from './components/Language';
 
 function App() {
   const [temperature, setTemperature] = useState(null)
+  const [weatherCode, setWeatherCode] = useState(null)
   async function getWeather(){
     const params = {
       // Moscow
@@ -67,12 +68,13 @@ function App() {
     };
     console.log(weatherData.current)
     setTemperature(Math.round(weatherData.current.temperature2m))
+    setWeatherCode(weatherData.current.weatherCode)
   }
   useEffect(() => {
     getWeather()
     const timeoutId = setInterval(() => {
       getWeather();
-    }, 300000);
+    }, 900000);
     
     },[]);
   return (
@@ -89,7 +91,7 @@ function App() {
         <Contacts/>
         <div className='footer-content'>
           <Geo/>
-          <Weather temp={temperature}/>
+          <Weather temp={temperature} weatherCode={weatherCode}/>
           <Language/>
         </div>
         

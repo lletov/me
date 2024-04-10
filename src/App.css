@@ -55,6 +55,7 @@ table {
   --green: #12FF63;
   --orange: #FC9459;
   --white: #fff;
+  --red: rgb(255, 79, 79);
 
     
 }
@@ -90,6 +91,13 @@ h3 {
   font-weight: 500px;
   color: var(--white);
   line-height: 20px;
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: 500px;
+  color: var(--white);
+  line-height: 18px;
 }
 
 .content{

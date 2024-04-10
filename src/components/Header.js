@@ -2,6 +2,9 @@ import React from 'react'
 
 export const Header = () => {
   return (
-    <div className='content'><p>Header</p></div>
+    <div className='content'>
+      <h1>DMITRY LETOV</h1>
+      <p>Frontend developer & web designer</p>
+    </div>
   )
 }

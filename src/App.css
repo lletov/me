@@ -67,28 +67,28 @@ body {
 
 p {
   font-size: 16px;
-  font-weight: 500px;
+  font-weight: 500;
   color: var(--white);
   line-height: 24px;
 }
 
 h2 {
   font-size: 20px;
-  font-weight: 500px;
+  font-weight: 500;
   color: var(--white);
   margin-bottom: 16px;
 }
 
 h1 {
   font-size: 24px;
-  font-weight: 500px;
+  font-weight: 500;
   color: var(--white);
   margin-bottom: 12px;
 }
 
 h3 {
   font-size: 14px;
-  font-weight: 500px;
+  font-weight: 500;
   color: var(--white);
   line-height: 20px;
 }
@@ -155,7 +155,7 @@ h4 {
 
 .main-content {
   display: grid;
-  grid-template-rows: 10vh 15vh 25vh calc(50vh - 6px);
+  grid-template-rows: 10vh 10vh 15vh calc(65vh - 6px);
   gap: 2px;
 }
 
@@ -173,6 +173,10 @@ h4 {
 
 .orange {
   color: var(--orange);
+}
+
+.green {
+  color: var(--green);
 }
 
 .tag{
@@ -210,4 +214,8 @@ h4 {
   gap: 24px;
   align-items: start;
   padding-top: 48px;
+}
+
+.mr-left-24{
+  margin-left: 24px;
 }

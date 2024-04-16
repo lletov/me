@@ -212,9 +212,8 @@ h4 {
 .contacts {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
   align-items: start;
-  padding-top: 48px;
 }
 
 .mr-left-24{

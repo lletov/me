@@ -4,6 +4,7 @@ export const Contacts = () => {
   return (
     <div className='content'>
       <h2>Contacts <span className='tag'></span></h2>
+      <br/>
       <div className='contacts'>
         <button className='btn'>
           <span className='btn-arrow'></span>

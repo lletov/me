@@ -152,24 +152,32 @@ h4 {
   display: grid;
   grid-template-columns: 75% auto;
   gap: 2px;
+  grid-template-areas: 
+  'main-content secondary-content'
+  'main-content footer-content'
+  ;
+
 }
 
 .main-content {
   display: grid;
   grid-template-rows: 13vh 20vh 12vh calc(55vh - 6px);
   gap: 2px;
+  grid-area: main-content;
 }
 
 .secondary-content {
   display: grid;
-  grid-template-rows: 30vh 30vh 30vh calc(10vh - 6px);
+  /* grid-template-rows: 30vh 30vh 30vh calc(10vh - 6px); */
   gap: 2px;
+  grid-area: secondary-content;
 }
 
-.footer-content{
+.footer-content {
   display: grid;
   grid-template-columns: 45% 25% auto;
   gap: 2px;
+  grid-area: footer-content;
 }
 
 .orange {
@@ -218,4 +226,36 @@ h4 {
 
 .mr-left-24{
   margin-left: 24px;
+}
+
+
+@media (max-width: 1000px)  {
+
+  .footer-content {
+    height: 48px;
+    padding-bottom: 2px;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .secondary-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .App{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 2px;
+    grid-template-areas:
+    'footer-content' 
+    'main-content'
+    'secondary-content'
+    ;
+  
+  }
 }

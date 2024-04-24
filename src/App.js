@@ -89,13 +89,12 @@ function App() {
         <Projects/>
         <Education/>
         <Contacts/>
-        <div className='footer-content'>
+      </div>
+      <div className='footer-content'>
           <Geo/>
           <Weather temp={temperature} weatherCode={weatherCode}/>
           <Language/>
         </div>
-        
-      </div>
     </div>
   );
 }

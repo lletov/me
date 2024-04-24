@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Skills = () => {
   return (
-    <div className='content'>
+    <div className='skills content'>
       <h2>Skills <span className='tag'></span></h2>
       {/* <h4>Programming:</h4>
         <p>JavaScript, Vue 3, VUEX, React, SCSS, HTML</p>

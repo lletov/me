@@ -8,7 +8,7 @@ export const Projects = () => {
           <span className='btn-arrow'></span>
           nohello
         </button>
-      <h4>Stack: React ( State, Context), HTML, SCSS, JS, Figma</h4>
+      <h4 className='stack'>Stack: React ( State, Context), HTML, SCSS, JS, Figma</h4>
     </div>
   )
 }

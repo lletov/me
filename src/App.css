@@ -55,7 +55,7 @@ table {
   --green: #12FF63;
   --orange: #FC9459;
   --white: #fff;
-  --red: rgb(255, 79, 79);
+  --red: #ff4f4f;
   --pink: #ffaaaa;
 
     
@@ -209,12 +209,12 @@ h4 {
 }
 
 .online-marker {
-  height: 8px;
-  width: 8px;
+  height: 4px;
+  width: 4px;
   background-color: var(--green);
   border-radius: 50%;
   margin-right: 8px;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .contacts {
@@ -222,6 +222,10 @@ h4 {
   flex-direction: column;
   gap: 12px;
   align-items: start;
+}
+.geo {
+  display: flex;
+  align-items: center;
 }
 
 .mr-left-24{

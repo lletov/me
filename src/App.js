@@ -12,11 +12,13 @@ import { Contacts } from './components/Contacts';
 import { Geo } from './components/Geo';
 import { Weather } from './components/Weather';
 import { Language } from './components/Language';
-import { fetchWeatherData } from './methods';
+import { fetchWeatherData, getUTChour } from './methods';
+
 
 function App() {
   const [temperature, setTemperature] = useState(null)
   const [weatherCode, setWeatherCode] = useState(null)
+  const [UTChour, setUTChour] = useState(0)
 
   async function getWeather(){
     try {
@@ -30,10 +32,19 @@ function App() {
       // setWeatherCode('--')
     }
   }
+
+  function setCurrentUTCHour(){
+    let hour = getUTChour()
+    setUTChour(hour)
+    console.log(hour)
+  }
+
   useEffect(() => {
     getWeather()
+    setCurrentUTCHour()
     const timeoutId = setInterval(() => {
       getWeather();
+      setCurrentUTCHour()
     }, 900000);
     
     },[]);
@@ -51,8 +62,8 @@ function App() {
         <Contacts/>
       </div>
       <div className='footer-content'>
-          <Geo/>
-          <Weather temp={temperature} weatherCode={weatherCode}/>
+          <Geo hour={UTChour} />
+          <Weather temp={temperature} weatherCode={weatherCode} />
           <Language/>
         </div>
     </div>

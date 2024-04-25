@@ -36,7 +36,6 @@ function App() {
   function setCurrentUTCHour(){
     let hour = getUTChour()
     setUTChour(hour)
-    console.log(hour)
   }
 
   useEffect(() => {

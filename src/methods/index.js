@@ -53,6 +53,5 @@ export async function fetchWeatherData(){
 
   export function getUTChour(){
     let date = new Date
-    console.log(date.getUTCHours())
     return date.getUTCHours()
   }

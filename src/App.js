@@ -28,8 +28,6 @@ function App() {
     }
     catch (err) {
       console.log('fetchWeatherData() error: ' + err)
-      // setTemperature('--')
-      // setWeatherCode('--')
     }
   }
 
